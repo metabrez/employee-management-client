@@ -1,0 +1,41 @@
+<div>
+    <h2>Welcome To Employee List</h2>
+    <a [routerLink]="['/employees/new']">Add Employee</a>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>username</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>email</th>
+            <th>age</th>
+            <th>address</th>
+        </tr>
+
+<tbody>
+<tr *ngFor="let emp of employees">
+
+    <td>{{emp.id}}</td>
+    <td>
+        <a [routerLink]="['/employees', emp.id]">{{emp.username}}</a>
+    </td>
+    <td id="username">{{emp.firstName}}</td>
+    <td id="lastName">{{emp.lastName}}</td>
+    <td id="email">{{emp.email}}</td>
+    <td id="age">{{emp.age}}</td>
+    <td id="address">{{emp.address}}</td>
+    <td>
+        <!-- <button (click)="deleteEmployee(emp.id!)">Delete</button> -->
+        <button [routerLink]="['/delete', emp.id]">Delete</button>
+    </td>
+    <td>
+        <a [routerLink]="['/employees', emp.id, 'edit']">Edit</a>
+    </td>
+</tr>
+</tbody>
+       
+    </table>
+</div>

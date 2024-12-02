@@ -1,0 +1,33 @@
+<p>employee-details works!</p>
+
+<div *ngIf="employee">
+    The employess details are:
+
+    <div>
+        <label for="">User Name: {{employee.username}}</label> <br>
+    </div>
+
+    <div>
+        <label for="">First Name: {{employee.firstName}}</label> <br>
+    </div>
+
+    <div>
+        <label for="">Last Name: {{employee.lastName}}</label><br>
+    </div>
+
+    <div>
+        <label for="">Email: {{employee.email}}</label><br>
+    </div>
+
+    <div>
+        <label for="">Age: {{employee.age}}</label><br>
+    </div>
+
+    <div>
+        <label for="">Address: {{employee.address}}</label><br>
+    </div>
+
+</div>
+<div>
+    <a routerLink="/employees">Back to Employee List</a>
+</div>

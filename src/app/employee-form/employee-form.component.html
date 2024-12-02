@@ -1,0 +1,50 @@
+<h2>{{ isEditMode ? 'Edit' : 'Add' }} Employee</h2>
+<form #editForm="ngForm" (ngSubmit)="onSubmit(editForm)">
+    <div>
+        <label for="username">Username</label>
+        <input type="text" id="username" [(ngModel)]="employee.username" name="username" required>
+        <div *ngIf="editForm.submitted && editForm.controls['username']?.invalid">Please Enter User Name</div>
+    </div>
+
+    <div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" [(ngModel)]="employee.firstName" name="firstName" required>
+        <div *ngIf="editForm.submitted && editForm.controls['firstName']?.invalid">Please Enter First Name</div>
+    </div>
+
+    <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" [(ngModel)]="employee.lastName" name="lastName" required>
+        <div *ngIf="editForm.submitted && editForm.controls['lastName']?.invalid">Please Enter Last Name</div>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" [(ngModel)]="employee.email" name="email" required>
+        <div *ngIf="editForm.submitted && editForm.controls['email']?.invalid">Please Enter Email</div>
+    </div>
+
+    <div>
+        <label for="age">Age</label>
+        <input type="number" id="age" [(ngModel)]="employee.age" name="age" required>
+        <div *ngIf="editForm.submitted && editForm.controls['age']?.invalid">Please Enter age</div>
+    </div>
+
+    <div>
+        <label for="address">Address</label>
+        <input type="text" id="address" [(ngModel)]="employee.address" name="address" required>
+        <div *ngIf="editForm.submitted && editForm.controls['address']?.invalid">Please Enter <Address></Address>
+        </div>
+    </div>
+
+
+    <div>
+        <button type="submit">{{ isEditMode ? 'Update' : 'Add' }} Employee</button> <br>
+        <a [routerLink]="['/employees']">Back to Employee List</a>
+    </div>
+
+
+
+
+</form>
+<!-- <a routerLink="['/employee']">Return to Employees List</a> -->
